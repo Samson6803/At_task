@@ -25,7 +25,7 @@ public class GitRepoController {
                     "XML response is not supported format");
             return new ResponseEntity<>(responseDTO, HttpStatus.NOT_FOUND);
         }
-        return null;
+        return gitRepoService.getReposInfo(username);
     }
 
 }
