@@ -18,7 +18,7 @@ public class GitRepoService {
     public ResponseEntity<Object> getReposInfo(String username) {
         RestTemplate restTemplate = new RestTemplate();
         ObjectMapper objectMapper = new ObjectMapper();
-        String url = "https://api.github.com/users/%s/repos".formatted(username);
+        String url = "https://api.github.com/users/%s/repos?fork=false".formatted(username);
         ResponseEntity<String> resultEntity;
         try{
             resultEntity = restTemplate.getForEntity(url, String.class);
@@ -35,6 +35,9 @@ public class GitRepoService {
             Iterator<JsonNode> elements = data.elements();
             while (elements.hasNext()){
                 JsonNode element = elements.next();
+                String isFork = element.get("fork").asText();
+                if(isFork.equals("true")) continue;
+                
                 String name = element.get("name").asText();
                 JsonNode owner = element.get("owner");
                 String login = owner.get("login").asText();
