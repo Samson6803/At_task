@@ -18,12 +18,12 @@ public class GitRepoController {
         this.gitRepoService = gitRepoService;
     }
 
-    @GetMapping(value = "/{username}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @GetMapping(value = "/{username}")
     public ResponseEntity<Object> getUserRepositories(@PathVariable String username, @RequestHeader(HttpHeaders.ACCEPT) String acceptHeader){
         if(acceptHeader.equals(MediaType.APPLICATION_XML_VALUE)){
             ResponseDTO responseDTO = new ResponseDTO(HttpStatus.NOT_ACCEPTABLE.value(),
-                    "XML response is not supported format");
-            return new ResponseEntity<>(responseDTO, HttpStatus.NOT_FOUND);
+                    "XML is not supported, incorrect 'Accept' header");
+            return new ResponseEntity<>(responseDTO, HttpStatus.NOT_ACCEPTABLE);
         }
         return gitRepoService.getReposInfo(username);
     }
