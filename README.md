@@ -7,7 +7,7 @@ Technologies used:
 ## Setup
 Clone this repo using git clone:
 ```
-git clone https://github.com/Samson6803/Atipera_task.git
+git clone https://github.com/Samson6803/At_task.git
 ```
 Run project in your IDE, its listening on localhost:8080
 
