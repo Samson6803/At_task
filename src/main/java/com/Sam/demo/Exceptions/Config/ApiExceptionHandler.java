@@ -1,5 +1,8 @@
-package com.Sam.demo.Exceptions;
+package com.Sam.demo.Exceptions.Config;
 
+import com.Sam.demo.Exceptions.Exceptions.ApiParsingException;
+import com.Sam.demo.Exceptions.Exceptions.ApiUnhandledFormatException;
+import com.Sam.demo.Exceptions.Exceptions.ApiUserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
