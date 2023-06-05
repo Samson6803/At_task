@@ -1,4 +1,4 @@
-# Atipera_task
+# At_task
 ## General info
 Simple API enabling to get data about users repositories and all its branches.
 
