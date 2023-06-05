@@ -1,7 +1,7 @@
-package com.Sam.demo.Controller;
+package com.Sam.demo.Controllers;
 
 import com.Sam.demo.DTO.ResponseDTO;
-import com.Sam.demo.Service.GitRepoService;
+import com.Sam.demo.Services.GitRepoService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

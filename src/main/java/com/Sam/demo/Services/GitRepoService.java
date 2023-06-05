@@ -1,4 +1,4 @@
-package com.Sam.demo.Service;
+package com.Sam.demo.Services;
 
 import com.Sam.demo.DTO.ResponseDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -37,7 +36,7 @@ public class GitRepoService {
                 JsonNode element = elements.next();
                 String isFork = element.get("fork").asText();
                 if(isFork.equals("true")) continue;
-                
+
                 String name = element.get("name").asText();
                 JsonNode owner = element.get("owner");
                 String login = owner.get("login").asText();
